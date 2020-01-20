@@ -43,7 +43,7 @@ export default class Room
   };
 
   render() {
-    const { id, name, email, phone ,username,address} = this.props.contacto;
+    const { id, email, phone ,username,address} = this.props.contacto;
 
     const { showContactInfo } = this.state;
 

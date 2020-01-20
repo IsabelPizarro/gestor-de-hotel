@@ -8,6 +8,7 @@ export default class EditRoom extends Component {
     name: "",
     email: "",
     phone: "",
+    addres:"",
     errors: {}
   };
 
@@ -23,7 +24,9 @@ export default class EditRoom extends Component {
     this.setState({
       name,
       email,
-      phone
+      phone,
+      addres      
+
     });
   }
 
@@ -32,7 +35,7 @@ export default class EditRoom extends Component {
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
 
-    const { name, email, phone } = this.state;
+    const { name, email, phone,addres } = this.state;
 
     // Verificar campos
     if (name.trim() === "") {
@@ -51,7 +54,8 @@ export default class EditRoom extends Component {
     const update = {
       name,
       email,
-      phone
+      phone,
+      addres
     };
 
     const { id } = this.props.match.params;
@@ -70,6 +74,7 @@ export default class EditRoom extends Component {
       name: "",
       email: "",
       phone: "",
+      addres:"",
       errors: {}
     });
 
@@ -77,7 +82,7 @@ export default class EditRoom extends Component {
   };
 
   render() {
-    const { name, email, phone, errors } = this.state;
+    const { name, email, phone,addres, errors } = this.state;
 
     return (
       <Consumer>
@@ -91,15 +96,23 @@ export default class EditRoom extends Component {
                   <TextInputGroup
                     name="name"
                     label="Nombre"
-                    placeholder="Ingrese nombre"
+                    placeholder="Nombre"
                     value={name}
+                    onChange={this.onChange}
+                    error={errors.name}
+                  />
+                    <TextInputGroup
+                    name="name"
+                    label="Ciudad"
+                    placeholder="Ciudad"
+                    value={addres}
                     onChange={this.onChange}
                     error={errors.name}
                   />
                   <TextInputGroup
                     name="email"
                     label="Email"
-                    placeholder="Ingrese email"
+                    placeholder="Email"
                     type="email"
                     value={email}
                     onChange={this.onChange}
@@ -108,7 +121,7 @@ export default class EditRoom extends Component {
                   <TextInputGroup
                     name="phone"
                     label="Teléfono"
-                    placeholder="Ingrese teléfono"
+                    placeholder="Teléfono"
                     value={phone}
                     onChange={this.onChange}
                     error={errors.phone}

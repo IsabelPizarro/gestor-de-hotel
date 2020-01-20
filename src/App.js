@@ -8,8 +8,8 @@ import Header from "./components/layout/Header";
 import Users from "./components/pages/Users";
 import NotFound from "./components/pages/NotFound";
 import WelcomeAdm from "./components/pages/WelcomeAdm";
-import Rooms from "./components/rooms/Rooms"
-
+import Rooms from "./components/rooms/Rooms";
+import Bills from "./components/pages/Bills";
 
 import { Provider } from "./context";
 
@@ -28,6 +28,7 @@ class App extends Component {
               <Switch>
                 <Route exact path="/" component={Contacts} />
                 <Route exact path="/users" component={Users} />
+                <Route exact path="/bills" component={Bills} />
                 <Route exact path="/rooms" component={Rooms}/>
                 <Route exact path="/AddRoom" component={AddRoom}/>
                 <Route exact path="/contact/add" component={AddContact} />

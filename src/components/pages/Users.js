@@ -3,8 +3,8 @@ import React from "react";
 export default () => {
   return (
     <div>
-      <h1 className="display-4">Acerca de Gestor de hotel</h1>
-      <p className="text-primary">Versión 1.0.0</p>
+      <h1 className="display-4">Gestor de reservas</h1>
+      <p className="text-primary">Aquí apareceran las reservas de los usuarios</p>
     </div>
   );
 };

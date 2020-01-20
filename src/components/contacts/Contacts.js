@@ -16,15 +16,15 @@ export default class Contacts extends Component {
               <h1 className="display-4 mb-2">
                 <span className="text-success">Usuarios</span>
               </h1>
-              <React.Fragment>
-        <Link to="/contact/add" className="text-primary">
-                <i className="fas fa-plus" /> Agregar nuevo usuario
-              </Link>
-        </React.Fragment>
+        
               {contactos.map(contacto => (
                 <Contact key={contacto.id} contacto={contacto} />
               ))}
-             
+                   <React.Fragment>
+        <Link to="/contact/add" className="text-primary">
+                <i className="fas fa-plus" /> <span class="badge badge-pill badge-primary">Agregar nuevo usuario</span>
+              </Link>
+        </React.Fragment>
             </React.Fragment>
           );
         }}

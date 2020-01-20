@@ -85,7 +85,7 @@ export default class AddRoom extends Component {
                     name="addres"
                     label="Ciudad"
                     placeholder="Ciudad"
-                     value={addres}
+                     value={addres.city}
                     onChange={this.onChange}
                     error={errors.name}
                   />
@@ -102,7 +102,7 @@ export default class AddRoom extends Component {
                   <TextInputGroup
                     name="phone"
                     label="Teléfono"
-                    placeholder="Ingrese teléfono"
+                    placeholder="Teléfono"
                     value={phone}
                     onChange={this.onChange}
                     error={errors.phone}
