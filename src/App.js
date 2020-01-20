@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import Contacts from "./components/contacts/Contacts";
 import AddContact from "./components/contacts/AddContact";
+import AddRoom from "./components/rooms/AddRoom";
 import EditContact from "./components/contacts/EditContact";
 import Header from "./components/layout/Header";
 import Users from "./components/pages/Users";
@@ -28,6 +29,7 @@ class App extends Component {
                 <Route exact path="/" component={Contacts} />
                 <Route exact path="/users" component={Users} />
                 <Route exact path="/rooms" component={Rooms}/>
+                <Route exact path="/AddRoom" component={AddRoom}/>
                 <Route exact path="/contact/add" component={AddContact} />
                 <Route exact path="/contact/edit/:id" component={EditContact} />
                 <Route exact path="/welcome" component={WelcomeAdm} />

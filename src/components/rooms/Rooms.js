@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Contact from "./Room";
+import Room from "./Room";
 import { Link } from "react-router-dom";
 import { Consumer } from "../../context";
 
@@ -17,12 +17,12 @@ export default class Rooms extends Component {
                 <span className="text-success">Habitaciones Disponiblbles</span>
               </h1>
               <React.Fragment>
-        <Link to="/contact/add" className="text-primary">
+        <Link to="/AddRoom" className="text-primary">
                 <i className="fas fa-plus" /> Agregar nueva habitación
               </Link>
         </React.Fragment>
               {contactos.map(contacto => (
-                <Contact key={contacto.id} contacto={contacto} />
+                <Room key={contacto.id} contacto={contacto} />
               ))}
              
             </React.Fragment>

@@ -36,7 +36,7 @@ export class Provider extends Component {
   };
 
   async componentDidMount() {
-    let res = await axios.get("http://my-json-server.typicode.com/IsabelPizarro/jsonmockHotels/db");
+    let res = await axios.get("https://jsonplaceholder.typicode.com/users");
     this.setState({ contactos: res.data });
   }
 

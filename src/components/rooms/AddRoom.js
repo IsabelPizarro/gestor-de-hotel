@@ -8,6 +8,7 @@ export default class AddRoom extends Component {
     name: "",
     email: "",
     phone: "",
+    addres:"",
     errors: {}
   };
 
@@ -16,7 +17,7 @@ export default class AddRoom extends Component {
   onSubmit = async (dispatch, e) => {
     e.preventDefault();
 
-    const { name, email, phone } = this.state;
+    const { name, email, phone ,addres} = this.state;
 
     // Verificar campos
     if (name.trim() === "") {
@@ -35,7 +36,8 @@ export default class AddRoom extends Component {
     const nuevoContacto = {
       name,
       email,
-      phone
+      phone,
+      addres
     };
 
     let res = await axios.post(
@@ -52,14 +54,15 @@ export default class AddRoom extends Component {
       name: "",
       email: "",
       phone: "",
+      addres:"",
       errors: {}
     });
 
-    this.props.history.push("/");
+    this.props.history.push("/rooms");
   };
 
   render() {
-    const { name, email, phone, errors } = this.state;
+    const { name, email, phone, addres, errors } = this.state;
 
     return (
       <Consumer>
@@ -67,21 +70,30 @@ export default class AddRoom extends Component {
           const { dispatch } = value;
           return (
             <div className="card mb-3">
-              <div className="card-header">Agregar contacto</div>
+              <div className="card-header">Agregar Habitación</div>
               <div className="card-body">
                 <form onSubmit={this.onSubmit.bind(this, dispatch)}>
-                  <TextInputGroup
+                <TextInputGroup
                     name="name"
                     label="Nombre"
-                    placeholder="Ingrese nombre"
+                    placeholder="Nombre del Hotel"
                     value={name}
                     onChange={this.onChange}
                     error={errors.name}
                   />
+                <TextInputGroup
+                    name="addres"
+                    label="Ciudad"
+                    placeholder="Ciudad"
+                     value={addres}
+                    onChange={this.onChange}
+                    error={errors.name}
+                  />
+               
                   <TextInputGroup
                     name="email"
                     label="Email"
-                    placeholder="Ingrese email"
+                    placeholder="Email"
                     type="email"
                     value={email}
                     onChange={this.onChange}
@@ -98,7 +110,7 @@ export default class AddRoom extends Component {
                   <input
                     type="submit"
                     className="btn btn-block btn-light"
-                    value="Agregar Contacto"
+                    value="Agregar Habitacion"
                   />
                 </form>
               </div>

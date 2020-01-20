@@ -13,8 +13,10 @@ export default class Room
   static defaultProps = {
     contacto: {
       name: "Nombre",
+      address:"calle",
       email: "dirección",
-      phone: "600 000 000"
+      phone: "600 000 000",
+      username:"pepa"
     }
   };
 
@@ -41,7 +43,7 @@ export default class Room
   };
 
   render() {
-    const { id, name, email, phone } = this.props.contacto;
+    const { id, name, email, phone ,username,address} = this.props.contacto;
 
     const { showContactInfo } = this.state;
 
@@ -51,8 +53,8 @@ export default class Room
           const { dispatch } = value;
           return (
             <div className="card card-body mb-3">
-              <h4>
-                {name}{" "}
+              <h4><span>Hotel {username}</span>
+                
                 <i
                   style={{ cursor: "pointer" }}
                   onClick={this.onShowClick}
@@ -77,10 +79,12 @@ export default class Room
               </h4>
               {showContactInfo ? (
                 <ul className="list-group">
+                  <li className="list-group-item">City:  {address.city}</li>
                   <li className="list-group-item">Email: {email}</li>
                   <li className="list-group-item">Teléfono: {phone}</li>
+              
                 </ul>
-              ) : null}
+              ) : null} 
             </div>
           );
         }}
