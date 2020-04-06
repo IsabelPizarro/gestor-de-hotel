@@ -10,9 +10,7 @@ import NotFound from "./components/pages/NotFound";
 import WelcomeAdm from "./components/pages/WelcomeAdm";
 import Rooms from "./components/rooms/Rooms";
 import Bills from "./components/pages/Bills";
-
 import { Provider } from "./context";
-
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
@@ -34,7 +32,6 @@ class App extends Component {
                 <Route exact path="/contact/add" component={AddContact} />
                 <Route exact path="/contact/edit/:id" component={EditContact} />
                 <Route exact path="/welcome" component={WelcomeAdm} />
-              
                 <Route component={NotFound} />
               </Switch>
             </div>
